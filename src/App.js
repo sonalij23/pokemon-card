@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Card from "./Components/Card";
+import axios from "axios";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(
+        "https://dev-util.edyst.com/challenge/pokemons/random"
+      );
+      console.log(request.data);
+
+      return request;
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="card__holder">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   );
 }
