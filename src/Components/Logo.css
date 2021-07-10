@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 20px;
+}
+
+.logo > h1 {
+  font-size: 122px;
+  font-family: "Fruktur", cursive;
+  color: white;
+}

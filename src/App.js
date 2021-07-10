@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Components/Card";
+import Logo from "./Components/Logo";
 import axios from "axios";
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="app">
+      <Logo />
       {pokemonData.length > 0 && (
         <div className="card__holder">
           <Card
